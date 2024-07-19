@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>{{media.titulo}}</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <button>
+            Modificar
+        </button>
+    </form>
+
+    <form action="{% url 'delete_crud' media.id %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button>
+            Eliminar
+        </button>
+    </form>
+
+    {{error}}
+    
+
+{% endblock %}

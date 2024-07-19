@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>crear crud</h1>
+
+<form method="POST" action="/crud/create/" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+    <button>
+        crear
+    </button>
+</form>
+
+{% endblock %}

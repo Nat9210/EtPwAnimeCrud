@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>CRUD</h1>
+
+<ul>
+    {% for media in media %}
+    <li>
+        <a href="{% url 'detail_crud' media.id %}">
+            <h1>{{media.titulo}}</h1>
+            <h3>{{media.tipo}}</h3>
+        </a>
+    </li>
+
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
